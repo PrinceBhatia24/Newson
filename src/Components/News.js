@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 
 export class News extends Component {
-  articles = [
+  article = [
     {
       source: {
         id: "engadget",
@@ -1660,29 +1660,35 @@ export class News extends Component {
   ];
   constructor() {
     super();
-    console.log("I am constructor");
     this.state = {
-      article: this.articles,
-    };
+      article: this.article
+    }
   }
+  // async componentDidMount(){
+  //   let url="https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=6660f2d670b94503a3086fe1a0111362"
+  //   let data= await fetch(url);
+  //   let parsedData =await data.json() ;
+  //   this.setState({article: parsedData.article});
+  //   }
   render() {
     return (
       <div>
         <div className="container my-3">
           <h1>Top Headlines</h1>
+
           <div className="row">
-            <div className="col-md-4 my-3">
-              <NewsItem title="Hello" description="casdc" imgUrl="https://s.yimg.com/os/creatr-uploaded-images/2022-08/826785b0-296d-11ed-aeb1-d30d9e5ff594"/>
-            </div>
-            <div className="col-md-4">
-              <NewsItem title="Hello" description="casdc" />
-            </div>
-            <div className="col-md-4">
-              <NewsItem title="Hello" description="casdc" />
-            </div>
-            <div className="col-md-4 my-3">
-              <NewsItem title="Hello" description="casdc" />
-            </div>
+            {this.state.article.map((element) => {
+              return (
+                <div className="col-md-3 my-3" key={element.url}>
+                  <NewsItem
+                    title={element.title?element.title.slice(0, 44):" "}
+                    description={element.description?element.description.slice(0, 88):" "}
+                    imgUrl={element.urlToImage}
+                    newsUrl={element.url}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
