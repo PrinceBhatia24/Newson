@@ -8,7 +8,7 @@ export class Navbar extends Component {
           {/* <img src="/Users/prince/Documents/Projects/news-app/src/Components/p.jpg"   width="20" height="20"></img> */}
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              Newsupon
+              Newson
             </a>
             <button
               className="navbar-toggler"
