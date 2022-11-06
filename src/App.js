@@ -1,8 +1,8 @@
-
 import './App.css';
 import React, { Component } from 'react'
-import Navbar from './Components/Navbar'
+
 import News from './Components/News';
+import Navbar from './Components/Navbar';
 
 
 export default class App extends Component {
@@ -10,7 +10,7 @@ export default class App extends Component {
     return (
       <div>
         <Navbar/>
-        <News/>
+        <News pageSize={16} apiKey={"34ccdce864694031b17b0ddc0e760b02"} country={"in"} category={"sports"}/>
       </div>
     )
   }

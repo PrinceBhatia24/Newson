@@ -1,10 +1,20 @@
-import React, { Component } from "react";
+import React,{Component, useState} from 'react'
+import News from './News'
 
-export class Navbar extends Component {
-  render() {
-    return (
-      <div>
-        <nav className="navbar navbar-expand-lg bg-light">
+
+function Navbar() {
+  const [category , setCategory]= useState("sports")
+  const [country , setCountry]= useState("in")
+ 
+  function categoryChange(){
+    setCategory("health")
+    setCountry("us")
+  }
+
+  return (
+    <>
+    <div>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           {/* <img src="/Users/prince/Documents/Projects/news-app/src/Components/p.jpg"   width="20" height="20"></img> */}
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
@@ -25,15 +35,35 @@ export class Navbar extends Component {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">    
+                <li className="nav-item">
+                  <button className="btn btn-dark" onClick={categoryChange}>
+                    Health
+                  </button>
+                </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="#">
-                    Home
+                    Sports
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="#">
-                    About
+                    Entertainment
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    General
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Health
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Science
                   </a>
                 </li>
               </ul>
@@ -41,8 +71,7 @@ export class Navbar extends Component {
           </div>
         </nav>
       </div>
-    );
-  }
+    </>
+  )
 }
-
-export default Navbar;
+export default Navbar
