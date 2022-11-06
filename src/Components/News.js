@@ -2,7 +2,16 @@ import axios from "axios";
 import React, { Component } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import NewsItem from "./NewsItem";
+import PropTypes from 'prop-types'
+
+
+
 class News extends Component {
+  static defaultProps={
+    country:'in',
+    category:"general",
+    pageSize:16
+  }
   constructor(props) {
     super(props)
     this.state = {
@@ -56,12 +65,12 @@ class News extends Component {
     return (
       <>
         <div className="container my-5">
-          <h1 style={{ marginTop: 89 }}>Top Headlines</h1>
-          {this.state.loading && <LoadingSpinner/>}
-          <div className="row">
+          <h3 style={{ marginTop: 89 }}>Top Headlines - {this.props.category} {this.state.loading && <LoadingSpinner/>} </h3>
+          {/* {this.state.loading && <LoadingSpinner/>} */}
+          <div className="row" style={{marginLeft:24}}>
             {!this.state.loading && this.state.articles.map((element) => {
               return <div className="col-md-3" key={element.url}>
-                <NewsItem title={element.title ? element.title.slice(0, 60) : ""} description={element.description ? element.description.slice(0, 100) : ""} url={element.urlToImage} newsurl={element.url} />
+                <NewsItem author={element.author} date={element.publishedAt} title={element.title ? element.title.slice(0, 60) : ""} description={element.description ? element.description.slice(0, 100) : ""} url={element.urlToImage} newsurl={element.url} />
               </div>
             })}
           </div>
