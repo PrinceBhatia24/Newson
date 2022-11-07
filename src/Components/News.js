@@ -14,20 +14,20 @@ const News = (props) => {
   const getData = async () => {
     setLoading(true)
     //Axios..
-    // const res = await axios.get(
-    //   `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=1&pageSize=${props.pageSize}`
-    // );
-    // setArticles(res.data.articles)
-    // setTotalResults(res.data.totalResults)
-    // setLoading(false)
+    const res = await axios.get(
+      `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=1&pageSize=${props.pageSize}`
+    );
+    setArticles(res.data.articles)
+    setTotalResults(res.data.totalResults)
+    setLoading(false)
 
     //Fetch Method
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=1&pageSize=${props.pageSize}`
-    let datas = await fetch(url);
-    let data = await datas.json()
-    setArticles(data.articles)
-    setTotalResults(data.totalResults)
-    setLoading(false)
+    // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=1&pageSize=${props.pageSize}`
+    // let datas = await fetch(url);
+    // let data = await datas.json()
+    // setArticles(data.articles)
+    // setTotalResults(data.totalResults)
+    // setLoading(false)
   }
 
   useEffect(() => {

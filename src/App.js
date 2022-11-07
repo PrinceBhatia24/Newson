@@ -5,7 +5,7 @@ import News from "./Components/News";
 import Navbar from "./Components/Navbar";
 
 const App = (props) => {
-  const apiKey = "34ccdce864694031b17b0ddc0e760b02";
+  const apiKey = "e61d86b6a1174866b569d2dd57e73549";
   const pageSize = "16"
   const country = "in"
 
