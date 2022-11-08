@@ -31,3 +31,23 @@
     position: relative;
     left: 660px;
   }
+  .div {
+    background-color: rgb(0, 0, 0);
+    height: 2px;
+    margin: 6px 0 6px -20px;
+    width: 15px;
+  }
+  .offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgb(255, 255, 255); */
+  }
+  sidebar-offcanvas {
+    position: fixed;
+    top: 0;
+    width: 50%;
+}
