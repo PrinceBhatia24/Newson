@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import NewsItem from "./NewsItem";
+import { NavLink } from "react-router-dom";
 
 
 const News = (props) => {
@@ -20,14 +21,6 @@ const News = (props) => {
     setArticles(res.data.articles)
     setTotalResults(res.data.totalResults)
     setLoading(false)
-
-    //Fetch Method
-    // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=1&pageSize=${props.pageSize}`
-    // let datas = await fetch(url);
-    // let data = await datas.json()
-    // setArticles(data.articles)
-    // setTotalResults(data.totalResults)
-    // setLoading(false)
   }
 
   useEffect(() => {
@@ -62,7 +55,7 @@ const News = (props) => {
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvas"
         style={{ position: "absolute", left: 53, top: 93, listStyleType: "none" }}
-        
+
       >
         <li>
           <div className="div"></div>
@@ -87,7 +80,7 @@ const News = (props) => {
         <button disabled={page + 1 > Math.ceil(totalResults / props.pageSize)} onClick={handleChangeNext} className="btn btn-dark">Next</button>
       </div>
       <div className="offcanvas offcanvas-start bg-light text-dark" id="offcanvas" style={{ width: 300 }}>
-        <div className="offcanvas-body" >
+        <div className="offcanvas-body">
           <div
             style={{ backgroundColor: "rgb(33 37 41)", position: "absolute", left: 0, top: 0, height: 56 }}
             className="container-fluid"
@@ -101,108 +94,28 @@ const News = (props) => {
 
                 />
               </li>
-              {/* <li><button class="btn" style="margin-left: 15px; background-color: #2874f0;"
-                          data-bs-dismiss="offcanvas"><img
-                              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS4wNjMgMWwxMi4zIDEyLjQyNW0uMDYzLTEyLjM2MkwxIDEzLjM2MyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+PC9zdmc+"></button>
-                  </li> */}
             </ul>
           </div>
-          <form action="">
-            <div>
-              <ul
-                style={{ marginTop: 80, listStyle: "none", marginLeft: "-35px" }}
-              >
-                <li>
-                  <h4>Login to check your account</h4>
-                </li>
-                <li>
-                  <div className="mb-2">
-                    <label htmlFor="email" className="form-label">
-                      Enter Email:
-                    </label>
-                    <input
-                      type="email"
-                      placeholder=" Enter Email"
-                      className="form-control"
-                      id="email"
-                      name="email"
-                      required=""
-                    />
+          <div>
+            <div className='container2' style={{ marginRight: 20 }}>
+              <div className="box1">
+                <ul className="list-group mt-1">
+                  <div id='m2' style={{ width: 272 }}>
+
+                    <li className="list-group-item">Vestibulum at eros</li>
+                    <li className="list-group-item">Vestibulum at eros</li>
+                    <li className="list-group-item">Vestibulum at eros</li>
+                    <li className="list-group-item">Vestibulum at eros</li>
+                    <li className="list-group-item">Vestibulum at eros</li>
+                    <li className="list-group-item">Vestibulum at eros</li>
+
                   </div>
-                </li>
-                <li>
-                  <div className="mb-1">
-                    <label htmlFor="password" className="form-label">
-                      Enter Password:
-                    </label>
-                    <input
-                      type="password"
-                      placeholder="Enter Password"
-                      className="form-control mb-5"
-                      id="password"
-                      name="password"
-                      required=""
-                    />
-                  </div>
-                </li>
-                <li>
-                  <p
-                    style={{
-                      fontSize: 13,
-                      cursor: "default",
-                      textAlign: "center"
-                    }}
-                  >
-                    By Continuing, you agree to flipkart's
-                    <span className="text-primary">Term of Use</span> and{" "}
-                    <span className="text-primary">Privacy</span>
-                  </p>
-                </li>
-                <li>
-                  <div className="container-fluid text-center">
-                    <button
-                      className="btn btn-primary px-5"
-                      type="submit"
-                      id="loginbtn2"
-                      style={{ backgroundColor: "#fb641b" }}
-                    >
-                      Login
-                    </button>
-                  </div>
-                </li>
-                <li>
-                  <p style={{ textAlign: "center", marginTop: 20, fontSize: 20 }}>
-                    Or
-                  </p>
-                  <div className="container-fluid text-center bg-light">
-                    <button
-                      className="btn btn-light text-primary px-4 pt-2"
-                      type="button"
-                    >
-                      Request OTP
-                    </button>
-                    <hr />
-                  </div>
-                </li>
-                <li>
-                  <center>
-                    {" "}
-                    <a
-                      className="m-3"
-                      // onClick={DisplayChange2}
-                      style={{
-                        textDecoration: "none",
-                        cursor: "pointer",
-                        fontSize: 13
-                      }}
-                    >
-                      New to Flipkart ? Create an account
-                    </a>
-                  </center>
-                </li>
-              </ul>
+                </ul>
+                <ul>
+                </ul>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </>

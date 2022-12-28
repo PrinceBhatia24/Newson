@@ -1,21 +1,22 @@
 import "./App.css";
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import News from "./Components/News";
 import Navbar from "./Components/Navbar";
-import { Link } from "react-router-dom";
 
 const App = (props) => {
+  const [coun, setCoun] = useState("in")
   const apiKey = "01cb608311c147f7a72d2f1cd1148ae0";
   const pageSize = "16"
-  const country = "in"
-  
+  const country = coun
+
+  console.log(coun)
+
 
   return (
     <div>
       <Router>
-        <Navbar/>
-
+        <Navbar setCoun={setCoun}/>
         <Switch>
           <Route exact path="/Newson">
             {" "}

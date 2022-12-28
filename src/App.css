@@ -11,6 +11,7 @@
   background-color: white;
   width: 250px;
   height: 100vh;
+  margin-top: 26px;
 }
 
 @media(max-width:500px) {
@@ -46,8 +47,4 @@
     height: 100vh;
     /* background-color: rgb(255, 255, 255); */
   }
-  sidebar-offcanvas {
-    position: fixed;
-    top: 0;
-    width: 50%;
-}
+ 

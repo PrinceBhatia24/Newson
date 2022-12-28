@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import News from "./News";
 
 
-function Navbar() {
-   const [coun , setCoun] =useState("in")
+function Navbar({ setCoun }) {
   return (
     <>
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-         
+
           <div className="container-fluid">
-            <Link className="navbar-brand"  to="#">
-            <img src={process.env.PUBLIC_URL + '/images/p.jpg'} alt="Newson"   width="100" height="20" style={{marginLeft:20}}></img>
+            <Link className="navbar-brand" to="#">
+              <img src={process.env.PUBLIC_URL + '/images/p.jpg'} alt="Newson" width="100" height="20" style={{ marginLeft: 20 }}></img>
             </Link>
             <button
               className="navbar-toggler"
@@ -89,13 +89,13 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <select className="form-select c1" aria-label="Default select example" onChange={(e)=>{setCoun(e.target.value)}}>
-                    
-                    <option value="in">India</option> 
-                    <option value="us">United State</option>
-                    <option value="ae">United arab emirates</option>
-                    <option value="nl">Netherland</option>
-                    <option value="br">Brazil</option>
+                  <select className="form-select c1" aria-label="Default select example" onChange={(e) => { setCoun(e.target.value) }}>
+
+                    <option value='in'>India</option>
+                    <option value='us'>United State</option>
+                    <option value='ae'>United arab emirates</option>
+                    <option value='nl'>Netherland</option>
+                    <option value='br'>Brazil</option>
                   </select>
                 </li>
               </ul>
@@ -103,7 +103,8 @@ function Navbar() {
           </div>
         </nav>
       </div>
-      
+
+
     </>
   );
 }
